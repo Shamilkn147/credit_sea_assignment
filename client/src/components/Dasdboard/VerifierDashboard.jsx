@@ -10,7 +10,7 @@ const VerifierDashboard = () => {
   const {data:loans,isError,error} = useQuery({
     queryKey:["loans"],
     queryFn:async()=>{
-        const response = await axios.get("http://localhost:3000/getLoans")
+        const response = await axios.get("https://credit-sea-assignment-6eav.onrender.com/getLoans")
         return response.data
     },onSuccess:(data)=>{
      console.log()
@@ -20,7 +20,7 @@ const VerifierDashboard = () => {
 const {data:cashDetails} = useQuery({
   queryKey:["cashDetails"],
   queryFn:async()=>{
-    const response = await axios.get("http://localhost:3000/getDetails")
+    const response = await axios.get("https://credit-sea-assignment-6eav.onrender.com/getDetails")
     return response.data[0]
   }
 })
@@ -29,7 +29,7 @@ const {data:cashDetails} = useQuery({
 const {data:getBorrowers} = useQuery({
   queryKey:["getBorrowers"],
   queryFn: async() => {
-    const response = await axios.get("http://localhost:3000/getBorrowers")
+    const response = await axios.get("https://credit-sea-assignment-6eav.onrender.com/getBorrowers")
     return response.data
   }
 })
@@ -40,7 +40,7 @@ const {mutate:changeStatus} = useMutation({
     if(loanStatus === "pending"){
       status = "verified"
     }
-    const response = await axios.patch("http://localhost:3000/changeStatus",{status,loanId})
+    const response = await axios.patch("https://credit-sea-assignment-6eav.onrender.com/changeStatus",{status,loanId})
     return response
   },onSuccess:()=>{
     queryClient.invalidateQueries["loans"]

@@ -48,14 +48,14 @@ const {mutate:changeStatus} = useMutation({
 })
 const {mutate:addMoney} = useMutation({
   mutationFn: async({amount}) => {
-    const response = await axios.patch("http://localhost:3000/addbalance",{userId,amount})
+    const response = await axios.patch("https://credit-sea-assignment-6eav.onrender.com/addbalance",{userId,amount})
     return response.data
   }
 })
 
 const {mutate:addBorrowers} = useMutation({
   mutationFn:async({amount}) => {
-    const response = await axios.patch("http://localhost:3000/changeBorrowed",{amount})
+    const response = await axios.patch("https://credit-sea-assignment-6eav.onrender.com/changeBorrowed",{amount})
     return response.data
   }
 })

@@ -11,7 +11,7 @@ const Login = () => {
     const navigate = useNavigate()
     const { mutate: loginMutate, isPending } = useMutation({
         mutationFn: async ({ email, password }) => {
-            const response = await axios.post("http://localhost:3000/login", { 
+            const response = await axios.post("https://credit-sea-assignment-6eav.onrender.com/login", { 
                 email, 
                 password 
             });

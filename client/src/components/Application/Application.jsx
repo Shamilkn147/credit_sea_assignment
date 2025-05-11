@@ -22,7 +22,7 @@ const Application = () => {
     
     const {mutate:application, isError, isPending,error} = useMutation({
         mutationFn:async() => {
-            const response = await axios.post("http://localhost:3000/loanApply",{
+            const response = await axios.post("https://credit-sea-assignment-6eav.onrender.com/loanApply",{
                 user,
                 fullName,
                 amount,

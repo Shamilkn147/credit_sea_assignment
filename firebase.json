@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "CREDITSEA_ASSIGNMENT",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

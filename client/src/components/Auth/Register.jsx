@@ -15,7 +15,7 @@ const Register = () => {
     const navigate = useNavigate()
     const {mutate:register} = useMutation({
         mutationFn:async() => {
-            const response = await axios.post("http://localhost:3000/register",{
+            const response = await axios.post("https://credit-sea-assignment-6eav.onrender.com/register",{
                 fullName,
                 email,
                 password,

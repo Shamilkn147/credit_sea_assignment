@@ -14,7 +14,7 @@ const UserDashboard = () => {
     const {data:loans,isError,error} = useQuery({
         queryKey:["loans"],
         queryFn:async()=>{
-            const response = await axios.get("http://localhost:3000/getLoans")
+            const response = await axios.get("https://credit-sea-assignment-6eav.onrender.com/getLoans")
             return response.data
         }
     })
@@ -22,7 +22,7 @@ const UserDashboard = () => {
     const {data:getUsers} = useQuery({
       queryKey:["getUsers"],
       queryFn:async()=>{
-        const response = await axios.get("http://localhost:3000/getUsers")
+        const response = await axios.get("https://credit-sea-assignment-6eav.onrender.com/getUsers")
         return response.data
       }
     })
