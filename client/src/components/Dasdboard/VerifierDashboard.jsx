@@ -43,7 +43,7 @@ const {mutate:changeStatus} = useMutation({
     const response = await axios.patch("https://credit-sea-assignment-6eav.onrender.com/changeStatus",{status,loanId})
     return response
   },onSuccess:()=>{
-    queryClient.invalidateQueries["loans"]
+    queryClient.invalidateQueries(["loans"])
   }
 })
 
