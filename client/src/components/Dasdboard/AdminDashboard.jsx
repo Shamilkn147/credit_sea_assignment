@@ -43,7 +43,6 @@ const {mutate:changeStatus} = useMutation({
     return response
   },onSuccess:()=>{
     queryClient.invalidateQueries(["loans"])
-    window.location.reload()
   }
 })
 const {mutate:addMoney} = useMutation({
