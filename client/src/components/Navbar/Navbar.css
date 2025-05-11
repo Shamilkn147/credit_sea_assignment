@@ -1,0 +1,71 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+  }
+  
+  .nav-buttons button {
+    margin: 0 10px;
+    background-color: #555;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .get-loan {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+    border: none;
+    padding: 8px 16px;
+    color: white;
+    cursor: pointer;
+    height: 100%;
+  }  
+
+  .get-loan i {
+    margin-right: 10px;
+  }
+
+
+
+.dropdown-toggle {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+
+.dropdown-menu {
+  position: fixed; /* Stays in place even when scrolling */
+  top: 60px; /* Adjust based on your header/navbar height */
+  left: 20px; /* Distance from left edge */
+  z-index: 1000; /* Ensures it floats above everything */
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-menu p {
+  padding: 10px 15px;
+  margin: 0;
+  cursor: pointer;
+}
+.dropdown-menu h1{
+  padding-left: 15px;
+}
+.dropdown-menu p:hover {
+  background: #f5f5f5;
+}

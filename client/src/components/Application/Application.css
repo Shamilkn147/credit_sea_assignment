@@ -1,0 +1,88 @@
+form {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  
+  form > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 30px;
+  }
+  
+  label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  input[type='text'],
+  input[type='number'],
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  input[type='checkbox'] {
+    margin-right: 10px;
+  }
+  
+  div label input[type='checkbox'] {
+    display: inline-block;
+    width: auto;
+  }
+  
+  div:nth-last-child(3),
+  div:nth-last-child(2) {
+    grid-column: span 2;
+  }
+  
+  button[type='submit'] {
+    grid-column: span 2;
+    background-color: #005400;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 120px;
+  }
+  
+  button[type='submit']:hover {
+    background-color: #003d00;
+  }
+
+svg{
+    /* Vector */
+
+position: absolute;
+left: 48.47%;
+right: 48.54%;
+top: 12.4%;
+bottom: 86.47%;
+
+background: rgb(62, 197, 84);
+
+}
+
