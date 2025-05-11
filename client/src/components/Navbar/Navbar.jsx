@@ -18,12 +18,12 @@ const Navbar = () => {
    
   return (
     <div className="navbar">
-        <div>
-        <span>Credit App</span>
-        {(role === "verifier" || role === "admin") && 
-       (<button className="drop-down-toggle" onClick={handleDropDown}>
-              ☰ Menu
-              </button>)}
+        <div className='main-nav'>
+           <h1>Credit app</h1>
+            {(role === "verifier" || role === "admin") && 
+          (<button className="drop-down-toggle" onClick={handleDropDown}>
+                  ☰ Menu
+                  </button>)}
         </div>
        {(role === "verifier" || role === "admin") &&(
           <div className="drop-down-container">
@@ -59,8 +59,8 @@ const Navbar = () => {
       </div>
        )}
             <div className="get-loan">
-                <i>notifications</i>
-                <i>messages</i>
+                <i><img className="icon-nav"src='https://img.icons8.com/?size=100&id=11642&format=png&color=000000'/></i>
+                <i><img className="icon-nav" src='https://img.icons8.com/?size=100&id=SxDZAUXQeW2y&format=png&color=000000'/></i>
                 <i>{fullName}</i>
                 <i onClick={handleLogout}>logout</i>
             </div>

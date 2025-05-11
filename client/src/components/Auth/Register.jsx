@@ -2,6 +2,7 @@ import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
 import React, { useState } from 'react'
 import {useNavigate} from "react-router-dom"
+import "./Register.css"
 
 const Register = () => {
     const [fullName,setFullName] = useState("")
@@ -86,7 +87,7 @@ const Register = () => {
             </ul>
         )}
         </div>
-        <button type='submit'>Register</button>
+        <button type='submit' className='submit-btn'>Register</button>
       </form>
     </div>
   )

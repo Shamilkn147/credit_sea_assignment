@@ -1,204 +1,226 @@
-/* Container */
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
 .verifier-dashboard {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    color: #2c3e50;
-    background-color: #f4f6f8;
-  }
-  
-  /* Grid Layout */
-  .dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-    align-items: stretch; /* Ensures all cards stretch to equal height */
-  }
-  
-  .metric-card {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    min-height: 160px; /* Ensures a minimum consistent height */
-    height: 100%;       /* Allows full height in grid */
-    box-sizing: border-box;
-  }
-  
-  .metric-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .metric-card h1:first-child {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #2c3e50;
-    margin: 0 0 0.5rem;
-  }
-  
-  .metric-card h1:last-child {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #7f8c8d;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0;
-  }
-  
-  /* Colored Borders */
-  .loans-container {
-    border-left-color: #e74c3c;
-  }
-  .borrowers-container {
-    border-left-color: #2ecc71;
-  }
-  .cash-distributed {
-    border-left-color: #f39c12;
-  }
-  .savings-container {
-    border-left-color: #9b59b6;
-  }
-  .repaid-loan-container {
-    border-left-color: #1abc9c;
-  }
-  .cash-recieved-container {
-    border-left-color: #2980b9;
-  }
-  
- 
-  
-  
-  /* Responsive Grid */
-  @media (max-width: 768px) {
-    .dashboard-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .dashboard-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .metric-card h1:first-child {
-      font-size: 1.8rem;
-    }
-  
-    .metric-card {
-      padding: 1.5rem 1rem;
-    }
-  }
-  
-  .loan-list {
-    list-style: none;
-    margin-top: 20px;
-    padding: 0;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    overflow: hidden;
-  }
-  .loan-list h2{
-    margin-top: 20px;
-    margin-left: 20px;
-  }
-  .loan-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 24px;
-    border-bottom: 1px solid #f0f0f0;
-    transition: background 0.2s;
-  }
-  
-  .loan-item:hover {
-    background: #f9fafb;
-  }
-  
-  .user-info {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex: 1;
-  }
-  
-  .avatar {
-    background-color: #ccc;
-    color: white;
-    font-weight: bold;
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .loan-reason {
-    font-weight: 500;
-    margin: 0;
-  }
-  
-  .loan-amount {
-    font-size: 13px;
-    color: #888;
-    margin-top: 4px;
-  }
-  
-  .customer-name {
-    flex: 1;
-  }
-  
-  .customer-name p {
-    margin: 0;
-  }
-  
-  .tenure {
-    font-size: 13px;
-    color: #888;
-  }
-  
-  .date-info {
-    flex: 1;
-    text-align: center;
-  }
-  
-  .date-info p {
-    margin: 0;
-  }
-  
-  .time {
-    font-size: 12px;
-    color: #aaa;
-  }
-  
-  .status {
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 500;
-    text-transform: capitalize;
-  }
-  
-  .status.pending {
-    background-color: #fff3cd;
-    color: #856404;
-  }
-  
-  .status.verified {
-    background-color: #d4edda;
-    color: #155724;
-  }
-  
-  .status.rejected {
-    background-color: #f8d7da;
-    color: #721c24;
-  }
-  
+  padding: 20px;
+}
+
+/* Page Container */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.metric-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.metric-card h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #007bff;
+}
+
+.metric-card h1:last-child {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Loan List */
+.loan-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.loan-list h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #444;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* Loan Item */
+.loan-item {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1fr 1fr 1fr;
+  align-items: center;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+  padding: 15px 10px;
+  transition: background-color 0.2s ease;
+}
+
+.loan-item:last-child {
+  border-bottom: none;
+}
+
+.loan-item:hover {
+  background-color: #f9f9f9;
+}
+
+/* User Info */
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #007bff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.loan-reason {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.loan-amount {
+  font-size: 12px;
+  color: #777;
+  margin-top: 5px;
+}
+
+/* Customer Name */
+.customer-name {
+  font-size: 14px;
+  color: #333;
+}
+
+.customer-name p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.tenure {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Date Info */
+.date-info {
+  text-align: center;
+}
+
+.date-info p {
+  margin: 0;
+  font-size: 12px;
+  color: #777;
+}
+
+/* Status Info */
+.status-info {
+  text-align: center;
+}
+
+.status {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.status.pending {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.status.verified {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.status.approved {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.status.rejected {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.status:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Approve/Reject Buttons */
+button {
+  padding: 8px 12px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button.approve {
+  background-color: #28a745;
+  color: #fff;
+}
+
+button.reject {
+  background-color: #dc3545;
+  color: #fff;
+}
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

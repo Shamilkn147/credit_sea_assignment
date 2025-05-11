@@ -74,6 +74,7 @@ const handleReject = (loanId) => {
     <div className='verifier-dashboard'>
       <Navbar/>
       <div className="dashboard-grid">
+        <div className='first-row'>
       <div className='metric-card loans-container'>
         <h1>200</h1>
         <h1>ACTIVE USERS </h1>
@@ -92,6 +93,8 @@ const handleReject = (loanId) => {
         </h1>
         <h1>CASH DISBURSED</h1>
       </div>
+      </div>
+      <div className='first-row'>
       <div className="metric-card savings-container">
         <h1>{cashDetails?.savings}</h1>
         <h1>SAVINGS</h1>
@@ -109,48 +112,55 @@ const handleReject = (loanId) => {
         <h1>OTHER ACCOUNTS</h1>
       </div>
       </div>
+      </div>
       <div>
-        Applied Loans
-        <ul className="loan-list">
-        <ul className="loan-list">
-        <ul className="loan-list">
-        <h2>Applied Loans</h2>
-  {loans?.map((loan) => (
-    <li key={loan._id} className="loan-item" >
-      <div className="user-info">
-        <div className="avatar">{loan.fullName?.[0]?.toUpperCase() || "?"}</div>
-        <div>
+        <table className="loan-table">
+  <thead>
+    <tr>
+      <th>Avatar</th>
+      <th>Reason</th>
+      <th>Customer Name</th>
+      <th>Tenure</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {loans?.map((loan) => (
+      <tr key={loan._id}>
+        <td>
+          <div className="avatar">{loan.fullName?.[0]?.toUpperCase() || "?"}</div>
+        </td>
+        <td>
           <p className="loan-reason">{loan.reason}</p>
           <p className="loan-amount">Loan Amount: ₹{loan.amount.toLocaleString()}</p>
-        </div>
-      </div>
-
-      <div className="customer-name">
-        <p>{loan.fullName}</p>
-        <p className="tenure">{loan.tenure} months</p>
-      </div>
-
-      <div className="date-info">
-        <p>{new Date().toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "short",
-          day: "numeric",
-        })}</p>
-        <p className="time">{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
-      </div>
-      {loan.status === "verified" && (
-       <div>
-         <button onClick={() => handleApprove(loan.amount,loan.user,loan._id)}>Approve</button>
-         <button onClick={() => handleReject(loan._id)}>Reject</button>
-       </div>
-      )}
-        <button className={`status ${loan.status.toLowerCase()}`}>{loan.status}</button>
-      
-    </li>
-  ))}
-</ul>
-        </ul>
-        </ul>
+        </td>
+        <td>{loan.fullName}</td>
+        <td>{loan.tenure} months</td>
+        <td>
+          <p>{new Date().toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })}</p>
+          <p className="time">{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+        </td>
+        <td>
+          <button className={`status ${loan.status.toLowerCase()}`}>{loan.status}</button>
+        </td>
+        <td className='action-buttons'>
+          {loan.status === "verified" && (
+            <>
+              <button onClick={() => handleApprove(loan.amount, loan.user, loan._id)}>Approve</button>
+              <button onClick={() => handleReject(loan._id)}>Reject</button>
+            </>
+          )}
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
       </div>
     </div>
   )

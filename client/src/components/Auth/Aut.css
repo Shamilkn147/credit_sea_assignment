@@ -1,0 +1,58 @@
+/* Auth.css */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f9fc;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 10px;
+  }
+  
+  .button-container button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: white;
+    color: #007bff;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .button-container button:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .button-container button.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .auth-form-wrapper {
+    max-width: 400px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

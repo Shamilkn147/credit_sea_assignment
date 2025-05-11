@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Login from './Login'
 import Register from './Register'
+import "./Aut.css"
 
 const Auth = () => {
     const [tab,setTab] = useState("login")

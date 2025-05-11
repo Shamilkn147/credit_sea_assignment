@@ -52,6 +52,7 @@ const {mutate:changeStatus} = useMutation({
     <div className='verifier-dashboard'>
       <Navbar/>
       <div className="dashboard-grid">
+        
         <div className='metric-card loans-container'>
         <h1>{loans?.length}</h1>
         <h1>LOANS</h1>
@@ -107,9 +108,9 @@ const {mutate:changeStatus} = useMutation({
         <p className="time">{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
       </div>
 
-      
+      <div className="status-info">
         <button className={`status ${loan.status.toLowerCase()}`}onClick={()=>changeStatus({loanId:loan._id,loanStatus:loan.status})}>{loan.status}</button>
-      
+      </div>
     </li>
   ))}
 </ul>

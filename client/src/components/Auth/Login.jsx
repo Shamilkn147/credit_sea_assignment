@@ -2,6 +2,7 @@ import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import "./Login.css"
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -49,7 +50,7 @@ const Login = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='form-container'>
             <input
                 type="email"
                 placeholder="Enter your email"
